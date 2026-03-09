@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Our Team — Comfort Keepers of Annapolis</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ck-blue: #0057A0;
+    --ck-teal: #00838F;
+    --ck-light-blue: #E3F2FD;
+    --ck-gold: #F9A825;
+    --ck-dark: #1B2A4A;
+    --ck-white: #FFFFFF;
+    --ck-light-gray: #F5F7FA;
+    --ck-green: #2E7D32;
+    --ck-coral: #E65100;
+    --ck-purple: #6A1B9A;
+    --gradient-primary: linear-gradient(135deg, #0057A0 0%, #00838F 100%);
+    --gradient-gold: linear-gradient(135deg, #F9A825 0%, #FF8F00 100%);
+    --gradient-hero: linear-gradient(135deg, #0D1B3E 0%, #0057A0 40%, #00838F 100%);
+    --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 40px rgba(0, 0, 0, 0.15);
+    --radius: 16px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    background: var(--ck-light-gray);
+    color: var(--ck-dark);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: var(--gradient-hero);
+    color: var(--ck-white);
+    padding: 60px 20px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0,131,143,0.2) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-content { position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .hero-flag {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+  .hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 2.6rem;
+    line-height: 1.15;
+    margin-bottom: 6px;
+  }
+  .hero h1 span {
+    color: var(--ck-gold);
+  }
+  .hero-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 18px;
+  }
+  .hero p {
+    font-size: 1rem;
+    max-width: 620px;
+    margin: 0 auto 28px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.7;
+  }
+  .hero-cta {
+    display: inline-block;
+    background: var(--gradient-gold);
+    color: var(--ck-dark);
+    padding: 14px 38px;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(249, 168, 37, 0.4);
+  }
+  .hero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(249, 168, 37, 0.5);
+  }
+  .hero-location {
+    margin-top: 22px;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ===== SECTION TITLES ===== */
+  .section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--ck-dark);
+  }
+  .section-subtitle {
+    text-align: center;
+    color: #6B7B8D;
+    font-size: 1rem;
+    margin-bottom: 36px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ===== WHY JOIN US ===== */
+  .why-section {
+    padding: 56px 20px;
+    background: var(--ck-white);
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .why-card {
+    background: var(--ck-light-gray);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+  .why-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+  }
+  .why-icon {
+    font-size: 2.4rem;
+    margin-bottom: 14px;
+    display: block;
+  }
+  .why-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: var(--ck-blue);
+  }
+  .why-card p {
+    font-size: 0.9rem;
+    color: #5A6A7A;
+    line-height: 1.6;
+  }
+
+  /* ===== POSITIONS ===== */
+  .positions-section {
+    padding: 56px 20px;
+    background: var(--ck-light-blue);
+  }
+  .positions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .position-card {
+    background: var(--ck-white);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    box-shadow: var(--shadow-card);
+    border-left: 5px solid var(--ck-teal);
+    transition: transform 0.2s;
+  }
+  .position-card:hover { transform: translateY(-3px); }
+  .position-card .role-badge {
+    display: inline-block;
+    background: var(--gradient-primary);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+  }
+  .position-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--ck-dark);
+    margin-bottom: 6px;
+  }
+  .position-card .pay {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--ck-green);
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  .position-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .position-card ul li {
+    font-size: 0.88rem;
+    color: #5A6A7A;
+    padding: 3px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+  .position-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--ck-teal);
+    font-weight: 700;
+  }
+
+  /* ===== BENEFITS ===== */
+  .benefits-section {
+    padding: 56px 20px;
+    background: var(--ck-white);
+  }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .benefit-item {
+    background: linear-gradient(135deg, #F5F7FA 0%, #E8EDF2 100%);
+    border-radius: 12px;
+    padding: 22px 18px;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  .benefit-item:hover { transform: translateY(-3px); }
+  .benefit-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+  .benefit-item h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--ck-dark);
+    margin-bottom: 4px;
+  }
+  .benefit-item p {
+    font-size: 0.82rem;
+    color: #6B7B8D;
+  }
+
+  /* ===== CULTURE / VALUES ===== */
+  .culture-section {
+    padding: 56px 20px;
+    background: var(--gradient-hero);
+    color: var(--ck-white);
+  }
+  .culture-section .section-title { color: var(--ck-white); }
+  .culture-section .section-subtitle { color: rgba(255,255,255,0.7); }
+  .values-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .value-chip {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.95);
+    transition: background 0.2s;
+  }
+  .value-chip:hover {
+    background: rgba(255,255,255,0.22);
+  }
+  .value-chip .v-icon { margin-right: 6px; }
+
+  /* ===== TRAINING ===== */
+  .training-section {
+    padding: 56px 20px;
+    background: var(--ck-light-gray);
+  }
+  .training-steps {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .training-steps::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--ck-teal), var(--ck-blue));
+    border-radius: 4px;
+  }
+  .step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .step-number {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    background: var(--gradient-primary);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    z-index: 1;
+    box-shadow: 0 3px 12px rgba(0,87,160,0.3);
+  }
+  .step-content {
+    background: var(--ck-white);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-left: 18px;
+    box-shadow: var(--shadow-card);
+    flex: 1;
+  }
+  .step-content h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--ck-blue);
+    margin-bottom: 4px;
+  }
+  .step-content p {
+    font-size: 0.88rem;
+    color: #5A6A7A;
+  }
+
+  /* ===== QUALIFICATIONS ===== */
+  .qualifications-section {
+    padding: 56px 20px;
+    background: var(--ck-white);
+  }
+  .qual-box {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--ck-light-gray);
+    border-radius: var(--radius);
+    padding: 32px;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .qual-box h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--ck-dark);
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .qual-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 30px;
+  }
+  .qual-item {
+    font-size: 0.9rem;
+    color: #4A5568;
+    padding: 6px 0;
+    padding-left: 26px;
+    position: relative;
+  }
+  .qual-item::before {
+    content: '●';
+    position: absolute;
+    left: 4px;
+    color: var(--ck-teal);
+    font-size: 0.7rem;
+    top: 8px;
+  }
+
+  /* ===== CTA FOOTER ===== */
+  .cta-section {
+    padding: 56px 20px;
+    background: var(--gradient-primary);
+    text-align: center;
+    color: var(--ck-white);
+  }
+  .cta-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  .cta-section p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 28px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-button {
+    display: inline-block;
+    background: var(--ck-gold);
+    color: var(--ck-dark);
+    padding: 16px 42px;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(249, 168, 37, 0.4);
+  }
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(249, 168, 37, 0.5);
+  }
+  .contact-info {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 2;
+  }
+  .contact-info a { color: var(--ck-gold); text-decoration: none; }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: var(--ck-dark);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.78rem;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.9rem; }
+    .hero-sub { font-size: 1rem; }
+    .section-title { font-size: 1.5rem; }
+    .qual-columns { grid-template-columns: 1fr; }
+    .cta-section h2 { font-size: 1.6rem; }
+    .positions-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">US Navy Veteran Owned and Opperated</div>
+    <div class="hero-flag">🤝 Now Hiring in Anne Arundel County</div>
+    <h1>Make a Difference<br>Every <span>Single</span> Day</h1>
+    <p class="hero-sub">Comfort Keepers of Annapolis</p>
+    <p>Join a team that elevates the human spirit. We're building something special in Annapolis a home care agency where caregivers are valued, trained, and empowered to provide joyful, person-centered care.</p>
+    <a href="mailto:info@annapolis.comfortkeepers.com?subject=Career%20Inquiry" class="hero-cta">Apply Now →</a>
+    <div class="hero-location">📍 Serving Annapolis, Severna Park, Crofton, Glen Burnie &amp; all of Anne Arundel County</div>
+  </div>
+</section>
+
+<!-- ===== WHY JOIN US ===== -->
+<section class="why-section">
+  <div class="container">
+    <h2 class="section-title">Why Comfort Keepers?</h2>
+    <p class="section-subtitle">We don't just fill shifts we build careers in caregiving with purpose, support, and growth.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-icon">💛</span>
+        <h3>Interactive Caregiving™</h3>
+        <p>Our proprietary approach engages clients in mind, body, and spirit turning every visit into a meaningful connection.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">📱</span>
+        <h3>Modern Technology</h3>
+        <p>Easy-to-use Viv mobile app for scheduling, clock-in/out, and visit notes. No paperwork headaches.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🎓</span>
+        <h3>Paid Training</h3>
+        <p>Comprehensive onboarding through CareAcademy plus hands-on skills validation before your first solo shift.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🏆</span>
+        <h3>National Brand, Local Heart</h3>
+        <p>700+ offices worldwide, recognized by Newsweek powered locally by owner-operators who know your name.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">📈</span>
+        <h3>Career Growth</h3>
+        <p>Clear advancement paths, performance reviews at 30/60/90 days, and annual evaluations with development plans.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🤗</span>
+        <h3>Supportive Team</h3>
+        <p>24/7 on-call support. You're never alone on a shift your team has your back around the clock.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OPEN POSITIONS ===== -->
+<section class="positions-section">
+  <div class="container">
+    <h2 class="section-title">Open Positions</h2>
+    <p class="section-subtitle">We're growing fast and looking for compassionate, reliable people to join our founding team.</p>
+    <div class="positions-grid">
+      <div class="position-card">
+        <span class="role-badge">Caregiving</span>
+        <h3>Caregiver / PCA / HCA</h3>
+        <div class="pay">$19 – $22 / hour</div>
+        <ul>
+          <li>Personal care &amp; companion services</li>
+          <li>Flexible schedules available</li>
+          <li>No nursing license required</li>
+          <li>CPR/First Aid certification needed</li>
+        </ul>
+      </div>
+      <div class="position-card">
+        <span class="role-badge">Caregiving</span>
+        <h3>Certified Nursing Assistant (CNA)</h3>
+        <div class="pay">$22 – $25 / hour</div>
+        <ul>
+          <li>ADL-focused personal care</li>
+          <li>Active MD CNA certification</li>
+          <li>Work with clients one-on-one</li>
+          <li>Flexible full &amp; part-time shifts</li>
+          <li>Coordinate client-caregiver schedules</li>
+          <li>Use Viv platform for daily ops</li>
+          <li>Home care experience preferred</li>
+
+      </div>
+      <div class="position-card">
+        <span class="role-badge">Clinical</span>
+        <h3>RN Supervisor (Contract/PT)</h3>
+        <div class="pay">Competitive Rate</div>
+        <ul>
+          <li>Clinical oversight &amp; assessments</li>
+          <li>Caregiver supervision per COMAR</li>
+          <li>Active unrestricted MD RN license</li>
+          <li>Flexible part-time or contract</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BENEFITS ===== -->
+<section class="benefits-section">
+  <div class="container">
+    <h2 class="section-title">Benefits &amp; Perks</h2>
+    <p class="section-subtitle">We invest in our caregivers because great outcomes start with great people.</p>
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <span class="benefit-icon">🏥</span>
+        <h4>Health Benefits</h4>
+        <p>Vitable Health: unlimited virtual primary &amp; mental health care, $0 out-of-pocket</p>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-icon">🦷</span>
+        <h4>Dental &amp; Vision</h4>
+        <p>Voluntary dental and vision plans available</p>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-icon">💰</span>
+        <h4>Competitive Pay</h4>
+        <p>$19–$25/hr for caregivers with overtime at 1.5×</p>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-icon">📚</span>
+        <h4>Free Training</h4>
+        <p>CareAcademy LMS + hands-on skills validation at no cost to you</p>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-icon">📅</span>
+        <h4>Flexible Scheduling</h4>
+        <p>Part-time and full-time shifts across Anne Arundel County</p>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-icon">⭐</span>
+        <h4>Recognition</h4>
+        <p>Performance-based recognition and caregiver appreciation</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CULTURE / VALUES ===== -->
+<section class="culture-section">
+  <div class="container">
+    <h2 class="section-title">Our Core Values</h2>
+    <p class="section-subtitle">These aren't just words on a wall — they guide how we treat our clients, each other, and our community every day.</p>
+    <div class="values-row">
+      <div class="value-chip"><span class="v-icon">🤲</span> Client Dignity &amp; Autonomy</div>
+      <div class="value-chip"><span class="v-icon">💡</span> Interactive Caregiving</div>
+      <div class="value-chip"><span class="v-icon">🛡️</span> Safety &amp; Quality</div>
+      <div class="value-chip"><span class="v-icon">🔒</span> Integrity &amp; Confidentiality</div>
+      <div class="value-chip"><span class="v-icon">🌟</span> Caregiver Excellence</div>
+      <div class="value-chip"><span class="v-icon">👨‍👩‍👧</span> Family Communication</div>
+      <div class="value-chip"><span class="v-icon">🏘️</span> Community Partnership</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRAINING JOURNEY ===== -->
+<section class="training-section">
+  <div class="container">
+    <h2 class="section-title">Your Onboarding Journey</h2>
+    <p class="section-subtitle">We set you up for success from day one with structured training and mentorship.</p>
+    <div class="training-steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h4>Apply &amp; Interview</h4>
+          <p>In-person or video interview with our team. We want to know your story and what drives you.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h4>Screening &amp; Onboarding</h4>
+          <p>Background check, TB screening, reference verification, and Viventium HR onboarding all coordinated for you.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h4>CareAcademy Training</h4>
+          <p>Online modules covering client rights, infection control, dementia care, fall prevention, emergency procedures, and more.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h4>Hands-On Skills Validation</h4>
+          <p>In-person skills check with a supervisor: transfers, personal care, hand hygiene, Viv app training, and Interactive Caregiving techniques.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <h4>Your First Client Match</h4>
+          <p>We carefully match you based on skills, schedule, personality, and preferences then support you with 30/60/90-day check-ins.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUALIFICATIONS ===== -->
+<section class="qualifications-section">
+  <div class="container">
+    <h2 class="section-title">What We're Looking For</h2>
+    <p class="section-subtitle">No experience? We'll train you. Experience? We'll elevate you.</p>
+    <div class="qual-box">
+      <h3>Caregiver Minimum Qualifications</h3>
+      <div class="qual-columns">
+        <div class="qual-item">High school diploma or equivalent preferred</div>
+        <div class="qual-item">CPR / First Aid certification</div>
+        <div class="qual-item">Reliable transportation</div>
+        <div class="qual-item">Pass background check &amp; TB screening</div>
+        <div class="qual-item">Compassionate &amp; dependable</div>
+        <div class="qual-item">Strong communication skills</div>
+        <div class="qual-item">CNA certification (for ADL-focused roles)</div>
+        <div class="qual-item">Willingness to learn and grow</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA / CONTACT ===== -->
+<section class="cta-section">
+  <h2>Ready to Elevate Lives?</h2>
+  <p>Join the founding team at Comfort Keepers of Annapolis. Your career in caregiving starts here.</p>
+  <a href="mailto:info@annapolis.comfortkeepers.com?subject=Career%20Inquiry%20-%20I%20Want%20to%20Join%20the%20Team" class="cta-button"> Email Us to Apply</a>
+  <div class="contact-info">
+    <strong>Comfort Keepers of Annapolis</strong><br>
+    📍 8370 Veterans Hwy, Suite 202 · Millersville, MD 21108<br>
+    ✉️ <a href="mailto:info@annapolis.comfortkeepers.com">info@annapolis.comfortkeepers.com</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  © 2026 Comfort Keepers of Annapolis · All Rights Reserved<br>
+  Comfort Keepers® is a registered trademark of CK Franchising, Inc. · Equal Opportunity Employer
+</footer>
+
+</body>
+</html>
