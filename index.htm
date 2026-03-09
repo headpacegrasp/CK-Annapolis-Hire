@@ -162,7 +162,7 @@
   }
   .why-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 24px;
     max-width: 900px;
     margin: 0 auto;
@@ -257,7 +257,7 @@
   }
   .clients-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     max-width: 900px;
     margin: 0 auto;
@@ -293,7 +293,7 @@
   }
   .positions-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 22px;
     max-width: 900px;
     margin: 0 auto;
@@ -360,7 +360,7 @@
   }
   .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     max-width: 900px;
     margin: 0 auto;
@@ -650,6 +650,13 @@
   }
 
   /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .clients-grid { grid-template-columns: repeat(2, 1fr); }
+    .positions-grid { grid-template-columns: repeat(1, 1fr); }
+    .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
   @media (max-width: 600px) {
     .hero h1 { font-size: 1.9rem; }
     .hero-sub { font-size: 1rem; }
@@ -659,6 +666,7 @@
     .positions-grid { grid-template-columns: 1fr; }
     .why-grid { grid-template-columns: 1fr; }
     .clients-grid { grid-template-columns: 1fr; }
+    .benefits-grid { grid-template-columns: 1fr; }
     .pay-banner h2 { font-size: 1.5rem; }
     .cert-callout { flex-direction: column; text-align: center; }
   }
@@ -669,7 +677,7 @@
 <!-- ===== HERO ===== -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-badge">US Navy Veteran Owned &amp; Opperated</div>
+    <div class="hero-badge">US Navy Veteran Owned &amp; Operated</div>
     <div class="hero-flag">🤝 Now Hiring in Anne Arundel County</div>
     <h1>Make a Difference<br>Every <span>Single</span> Day</h1>
     <p class="hero-sub">Comfort Keepers of Annapolis</p>
@@ -718,7 +726,6 @@
         <h3>Partial Health Care Benefits</h3>
         <p>Access to health benefits including Vitable Health: unlimited virtual primary &amp; mental health care, plus voluntary dental &amp; vision.</p>
       </div>
-
       <div class="why-card">
         <span class="why-icon">💛</span>
         <h3>Meaningful Impact</h3>
@@ -990,4 +997,3 @@
 
 </body>
 </html>
-
