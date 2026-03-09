@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Join Our Team — Comfort Keepers of Annapolis</title>
+<title>Join Our Team Comfort Keepers of Annapolis</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -197,10 +197,99 @@
     line-height: 1.6;
   }
 
+  /* ===== PAY HIGHLIGHT BANNER ===== */
+  .pay-banner {
+    background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 50%, #43A047 100%);
+    color: var(--ck-white);
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .pay-banner::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .pay-banner-content { position: relative; z-index: 1; }
+  .pay-banner h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+  .pay-banner h2 span { color: var(--ck-gold); }
+  .pay-banner p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.85);
+    max-width: 550px;
+    margin: 0 auto;
+  }
+  .pay-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 22px;
+  }
+  .pay-pill {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: #fff;
+  }
+  .pay-pill .pill-icon { margin-right: 6px; }
+
+  /* ===== WHAT WE DO FOR CLIENTS ===== */
+  .clients-section {
+    padding: 56px 20px;
+    background: var(--ck-light-blue);
+  }
+  .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .client-card {
+    background: var(--ck-white);
+    border-radius: 14px;
+    padding: 24px 20px;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.2s;
+    border-top: 4px solid var(--ck-teal);
+  }
+  .client-card:hover { transform: translateY(-3px); }
+  .client-icon { font-size: 2.2rem; margin-bottom: 10px; display: block; }
+  .client-card h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--ck-dark);
+    margin-bottom: 6px;
+  }
+  .client-card p {
+    font-size: 0.85rem;
+    color: #5A6A7A;
+    line-height: 1.5;
+  }
+
   /* ===== POSITIONS ===== */
   .positions-section {
     padding: 56px 20px;
-    background: var(--ck-light-blue);
+    background: var(--ck-light-gray);
   }
   .positions-grid {
     display: grid;
@@ -392,13 +481,56 @@
     color: #5A6A7A;
   }
 
+  /* ===== DEMENTIA CERT CALLOUT ===== */
+  .cert-callout {
+    max-width: 700px;
+    margin: 30px auto 0;
+    background: linear-gradient(135deg, #FFF8E1, #FFF3C4);
+    border: 2px solid var(--ck-gold);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .cert-callout-icon {
+    font-size: 2.8rem;
+    min-width: 50px;
+    text-align: center;
+  }
+  .cert-callout h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--ck-dark);
+    margin-bottom: 4px;
+  }
+  .cert-callout p {
+    font-size: 0.88rem;
+    color: #5A6A7A;
+    line-height: 1.5;
+  }
+  .cert-badge {
+    display: inline-block;
+    background: var(--ck-gold);
+    color: var(--ck-dark);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border-radius: 50px;
+    margin-top: 6px;
+  }
+
   /* ===== QUALIFICATIONS ===== */
   .qualifications-section {
     padding: 56px 20px;
     background: var(--ck-white);
   }
   .qual-box {
-    max-width: 700px;
+    max-width: 750px;
     margin: 0 auto;
     background: var(--ck-light-gray);
     border-radius: var(--radius);
@@ -432,6 +564,23 @@
     color: var(--ck-teal);
     font-size: 0.7rem;
     top: 8px;
+  }
+  .qual-item.required { font-weight: 600; color: var(--ck-dark); }
+  .qual-divider {
+    grid-column: 1 / -1;
+    border: none;
+    border-top: 1px dashed #CBD5E0;
+    margin: 8px 0;
+  }
+  .qual-label {
+    grid-column: 1 / -1;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--ck-teal);
+    padding-top: 4px;
   }
 
   /* ===== CTA FOOTER ===== */
@@ -467,10 +616,21 @@
     text-decoration: none;
     transition: transform 0.2s, box-shadow 0.2s;
     box-shadow: 0 4px 20px rgba(249, 168, 37, 0.4);
+    margin: 0 8px 12px;
   }
   .cta-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 30px rgba(249, 168, 37, 0.5);
+  }
+  .cta-button.secondary {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border: 2px solid rgba(255,255,255,0.4);
+    box-shadow: none;
+  }
+  .cta-button.secondary:hover {
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0 4px 20px rgba(255,255,255,0.1);
   }
   .contact-info {
     margin-top: 30px;
@@ -498,6 +658,9 @@
     .cta-section h2 { font-size: 1.6rem; }
     .positions-grid { grid-template-columns: 1fr; }
     .why-grid { grid-template-columns: 1fr; }
+    .clients-grid { grid-template-columns: 1fr; }
+    .pay-banner h2 { font-size: 1.5rem; }
+    .cert-callout { flex-direction: column; text-align: center; }
   }
 </style>
 </head>
@@ -506,26 +669,60 @@
 <!-- ===== HERO ===== -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-badge">US Navy Veteran Owned and Opperated</div>
+    <div class="hero-badge">US Navy Veteran Owned &amp; Opperated</div>
     <div class="hero-flag">🤝 Now Hiring in Anne Arundel County</div>
     <h1>Make a Difference<br>Every <span>Single</span> Day</h1>
     <p class="hero-sub">Comfort Keepers of Annapolis</p>
-    <p>Join a team that elevates the human spirit. We're building something special in Annapolis a home care agency where caregivers are valued, trained, and empowered to provide joyful, person-centered care.</p>
+    <p>Join a team that elevates the human spirit. We're building something special in Annapolis, a home care agency where caregivers are valued, trained, and empowered to deliver joyful, person-centered care with every shift.</p>
     <a href="mailto:info@annapolis.comfortkeepers.com?subject=Career%20Inquiry" class="hero-cta">Apply Now →</a>
-    <div class="hero-location">📍 Serving Annapolis, Severna Park, Crofton, Glen Burnie &amp; all of Anne Arundel County</div>
+    <div class="hero-location">📍 Serving Annapolis, Severna Park, Crofton, Glen Burnie &amp; Most of Anne Arundel County</div>
+  </div>
+</section>
+
+<!-- ===== PAY HIGHLIGHT BANNER ===== -->
+<section class="pay-banner">
+  <div class="pay-banner-content">
+    <h2>Competitive Pay: <span>$19 – $25/hr</span></h2>
+    <p>Based on your availability, experience, and certifications with premium rates built in.</p>
+    <div class="pay-pills">
+      <div class="pay-pill"><span class="pill-icon">📅</span> Weekend Premium Pay</div>
+      <div class="pay-pill"><span class="pill-icon">⏰</span> Overtime at 1.5×</div>
+      <div class="pay-pill"><span class="pill-icon">📈</span> Experience-Based Raises</div>
+    </div>
   </div>
 </section>
 
 <!-- ===== WHY JOIN US ===== -->
 <section class="why-section">
   <div class="container">
-    <h2 class="section-title">Why Comfort Keepers?</h2>
-    <p class="section-subtitle">We don't just fill shifts we build careers in caregiving with purpose, support, and growth.</p>
+    <h2 class="section-title">Why Work for Comfort Keepers?</h2>
+    <p class="section-subtitle">We invest in our people because exceptional caregivers deliver exceptional care.</p>
     <div class="why-grid">
       <div class="why-card">
+        <span class="why-icon">💰</span>
+        <h3>Competitive Pay + Premiums</h3>
+        <p>Pay based on experience and availability, with increased rates for weekends and 4-hour shifts. Your time is valued.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🤗</span>
+        <h3>24/7 Team Support</h3>
+        <p>Supportive work environment with around-the-clock access to the office team. You're never on your own.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🎓</span>
+        <h3>Paid Training + Dementia Cert</h3>
+        <p>Paid orientation and ongoing education, including <strong>Dementia Specialist Certification</strong> — good for any employer for 2 years.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🏥</span>
+        <h3>Partial Health Care Benefits</h3>
+        <p>Access to health benefits including Vitable Health: unlimited virtual primary &amp; mental health care, plus voluntary dental &amp; vision.</p>
+      </div>
+
+      <div class="why-card">
         <span class="why-icon">💛</span>
-        <h3>Interactive Caregiving™</h3>
-        <p>Our proprietary approach engages clients in mind, body, and spirit turning every visit into a meaningful connection.</p>
+        <h3>Meaningful Impact</h3>
+        <p>A chance to make a real difference with every single shift. Our Interactive Caregiving™ approach brings purpose and joy to every visit.</p>
       </div>
       <div class="why-card">
         <span class="why-icon">📱</span>
@@ -533,24 +730,54 @@
         <p>Easy-to-use Viv mobile app for scheduling, clock-in/out, and visit notes. No paperwork headaches.</p>
       </div>
       <div class="why-card">
-        <span class="why-icon">🎓</span>
-        <h3>Paid Training</h3>
-        <p>Comprehensive onboarding through CareAcademy plus hands-on skills validation before your first solo shift.</p>
-      </div>
-      <div class="why-card">
         <span class="why-icon">🏆</span>
         <h3>National Brand, Local Heart</h3>
-        <p>700+ offices worldwide, recognized by Newsweek powered locally by owner-operators who know your name.</p>
+        <p>700+ offices worldwide, recognized by Newsweek — powered locally by owner-operators who know your name.</p>
       </div>
       <div class="why-card">
         <span class="why-icon">📈</span>
         <h3>Career Growth</h3>
-        <p>Clear advancement paths, performance reviews at 30/60/90 days, and annual evaluations with development plans.</p>
+        <p>Clear advancement paths with performance reviews at 30/60/90 days and annual evaluations with development plans.</p>
       </div>
-      <div class="why-card">
-        <span class="why-icon">🤗</span>
-        <h3>Supportive Team</h3>
-        <p>24/7 on-call support. You're never alone on a shift your team has your back around the clock.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT WE DO FOR CLIENTS ===== -->
+<section class="clients-section">
+  <div class="container">
+    <h2 class="section-title">What We Do for Our Clients</h2>
+    <p class="section-subtitle">Here's the kind of care you'll provide — person-centered support that makes a real difference every day.</p>
+    <div class="clients-grid">
+      <div class="client-card">
+        <span class="client-icon">🍽️</span>
+        <h4>Meal Prep &amp; Light Housekeeping</h4>
+        <p>Nutritious meals tailored to dietary needs, plus keeping the living space clean and comfortable.</p>
+      </div>
+      <div class="client-card">
+        <span class="client-icon">🚗</span>
+        <h4>Transportation</h4>
+        <p>Safe rides to medical appointments, errands, grocery runs, and community activities.</p>
+      </div>
+      <div class="client-card">
+        <span class="client-icon">💊</span>
+        <h4>Medication Reminders</h4>
+        <p>Timely reminders to help clients stay on track with their prescribed medication schedules.</p>
+      </div>
+      <div class="client-card">
+        <span class="client-icon">🎨</span>
+        <h4>Interactive Activities</h4>
+        <p>Games, conversation, hobbies, and outings that stimulate the mind and nourish the spirit.</p>
+      </div>
+      <div class="client-card">
+        <span class="client-icon">🛁</span>
+        <h4>Personal Care Assistance</h4>
+        <p>Dignified help with bathing, dressing, transferring, toileting, and feeding as needed.</p>
+      </div>
+      <div class="client-card">
+        <span class="client-icon">🧠</span>
+        <h4>Emotional &amp; Mental Well-Being</h4>
+        <p>Companionship, active listening, and engagement that reduces isolation and lifts spirits.</p>
       </div>
     </div>
   </div>
@@ -569,7 +796,8 @@
         <ul>
           <li>Personal care &amp; companion services</li>
           <li>Flexible schedules available</li>
-          <li>No nursing license required</li>
+          <li>Weekend &amp; 4-hr shift premiums</li>
+          <li>Min 1 year caregiving experience</li>
           <li>CPR/First Aid certification needed</li>
         </ul>
       </div>
@@ -581,11 +809,9 @@
           <li>ADL-focused personal care</li>
           <li>Active MD CNA certification</li>
           <li>Work with clients one-on-one</li>
+          <li>Weekend &amp; 4-hr shift premiums</li>
           <li>Flexible full &amp; part-time shifts</li>
-          <li>Coordinate client-caregiver schedules</li>
-          <li>Use Viv platform for daily ops</li>
-          <li>Home care experience preferred</li>
-
+        </ul>
       </div>
       <div class="position-card">
         <span class="role-badge">Clinical</span>
@@ -606,27 +832,27 @@
 <section class="benefits-section">
   <div class="container">
     <h2 class="section-title">Benefits &amp; Perks</h2>
-    <p class="section-subtitle">We invest in our caregivers because great outcomes start with great people.</p>
+    <p class="section-subtitle">We take care of the people who take care of others.</p>
     <div class="benefits-grid">
       <div class="benefit-item">
         <span class="benefit-icon">🏥</span>
-        <h4>Health Benefits</h4>
+        <h4>Health Care Benefits</h4>
         <p>Vitable Health: unlimited virtual primary &amp; mental health care, $0 out-of-pocket</p>
       </div>
       <div class="benefit-item">
         <span class="benefit-icon">🦷</span>
         <h4>Dental &amp; Vision</h4>
-        <p>Voluntary dental and vision plans available</p>
+        <p>Voluntary dental and vision plans available for eligible staff</p>
       </div>
       <div class="benefit-item">
         <span class="benefit-icon">💰</span>
         <h4>Competitive Pay</h4>
-        <p>$19–$25/hr for caregivers with overtime at 1.5×</p>
+        <p>$19–$25/hr with weekend premiums, 4-hr shift bonuses, and 1.5× overtime</p>
       </div>
       <div class="benefit-item">
         <span class="benefit-icon">📚</span>
-        <h4>Free Training</h4>
-        <p>CareAcademy LMS + hands-on skills validation at no cost to you</p>
+        <h4>Paid Training</h4>
+        <p>Paid orientation + CareAcademy LMS + Dementia Specialist Certification</p>
       </div>
       <div class="benefit-item">
         <span class="benefit-icon">📅</span>
@@ -636,7 +862,7 @@
       <div class="benefit-item">
         <span class="benefit-icon">⭐</span>
         <h4>Recognition</h4>
-        <p>Performance-based recognition and caregiver appreciation</p>
+        <p>Performance-based recognition and caregiver appreciation events</p>
       </div>
     </div>
   </div>
@@ -646,11 +872,10 @@
 <section class="culture-section">
   <div class="container">
     <h2 class="section-title">Our Core Values</h2>
-    <p class="section-subtitle">These aren't just words on a wall, they guide how we treat our clients, each other, and our community every day.</p>
+    <p class="section-subtitle">These aren't just words on a wall — they guide how we treat our clients, each other, and our community every day.</p>
     <div class="values-row">
       <div class="value-chip"><span class="v-icon">🤲</span> Client Dignity &amp; Autonomy</div>
       <div class="value-chip"><span class="v-icon">💡</span> Interactive Caregiving</div>
-      <div class="value-chip"><span class="v-icon">🔒</span> Integrity &amp; Confidentiality</div>
       <div class="value-chip"><span class="v-icon">🌟</span> Caregiver Excellence</div>
       <div class="value-chip"><span class="v-icon">👨‍👩‍👧</span> Family Communication</div>
       <div class="value-chip"><span class="v-icon">🏘️</span> Community Partnership</div>
@@ -662,42 +887,52 @@
 <section class="training-section">
   <div class="container">
     <h2 class="section-title">Your Onboarding Journey</h2>
-    <p class="section-subtitle">We set you up for success from day one with structured training and mentorship.</p>
+    <p class="section-subtitle">We set you up for success from day one with paid, structured training and mentorship.</p>
     <div class="training-steps">
       <div class="step">
         <div class="step-number">1</div>
         <div class="step-content">
           <h4>Apply &amp; Interview</h4>
-          <p>In-person or video interview with our team. We want to know your story and what drives you.</p>
+          <p>In-person or video interview with our team. We want to know your story and what drives you to caregiving.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-number">2</div>
         <div class="step-content">
           <h4>Screening &amp; Onboarding</h4>
-          <p>Background check, TB screening, reference verification, and Viventium HR onboarding all coordinated for you.</p>
+          <p>Background check, drug screening, TB verification, reference checks, and Viventium HR onboarding — all coordinated for you.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-number">3</div>
         <div class="step-content">
-          <h4>CareAcademy Training</h4>
-          <p>Online modules covering client rights, infection control, dementia care, fall prevention, emergency procedures, and more.</p>
+          <h4>Paid Orientation &amp; CareAcademy Training</h4>
+          <p>Online modules covering client rights, infection control, dementia care, fall prevention, emergency procedures, and Interactive Caregiving™ - all on the clock.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-number">4</div>
         <div class="step-content">
           <h4>Hands-On Skills Validation</h4>
-          <p>In-person skills check with a supervisor: transfers, personal care, hand hygiene, Viv app training, and Interactive Caregiving techniques.</p>
+          <p>In-person skills check with a supervisor: transfers, personal care, hand hygiene, Viv app training, and Dementia Specialist Certification prep.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-number">5</div>
         <div class="step-content">
           <h4>Your First Client Match</h4>
-          <p>We carefully match you based on skills, schedule, personality, and preferences then support you with 30/60/90-day check-ins.</p>
+          <p>We carefully match you based on skills, schedule, personality, and preferences, then support you with 30/60/90-day check-ins and ongoing education.</p>
         </div>
+      </div>
+    </div>
+
+    <!-- Dementia Cert Callout -->
+    <div class="cert-callout">
+      <div class="cert-callout-icon">🏅</div>
+      <div>
+        <h4>Earn Your Dementia Specialist Certification</h4>
+        <p>Through our training program, you'll earn a <strong>Dementia Specialist Certification</strong> that's recognized industry-wide and <strong>good for any employer for 2 years</strong>. It's a career credential you take with you our investment in your professional growth.</p>
+        <span class="cert-badge">Portable Credential • 2-Year Validity</span>
       </div>
     </div>
   </div>
@@ -706,19 +941,28 @@
 <!-- ===== QUALIFICATIONS ===== -->
 <section class="qualifications-section">
   <div class="container">
-    <h2 class="section-title">What We're Looking For</h2>
-    <p class="section-subtitle">No experience? We'll train you. Experience? We'll elevate you.</p>
+    <h2 class="section-title">Requirements of Employment</h2>
+    <p class="section-subtitle">Here's what you need to get started with us.</p>
     <div class="qual-box">
-      <h3>Caregiver Minimum Qualifications</h3>
+      <h3>Caregiver Requirements</h3>
       <div class="qual-columns">
-        <div class="qual-item">High school diploma or equivalent </div>
+        <div class="qual-label">Required</div>
+        <div class="qual-item required">Minimum 1 year of professional caregiving experience</div>
+        <div class="qual-item required">Valid Social Security Card with U.S. work eligibility</div>
+        <div class="qual-item required">High school diploma or GED</div>
+        <div class="qual-item required">Valid driver's license &amp; reliable transportation</div>
+        <div class="qual-item required">Current auto insurance</div>
+        <div class="qual-item required">Ability to pass background check &amp; drug screening</div>
+        <div class="qual-item required">Negative TB test results from the past 12 months</div>
+        <div class="qual-item required">Strong communication &amp; problem-solving skills</div>
+        <div class="qual-divider"></div>
+        <div class="qual-label">A Plus (Not Required)</div>
+        <div class="qual-item">CNA certification</div>
+        <div class="qual-item">CMT certification</div>
+        <div class="qual-item">HHA certification</div>
         <div class="qual-item">CPR / First Aid certification</div>
-        <div class="qual-item">Reliable transportation</div>
-        <div class="qual-item">Pass background check &amp; TB screening</div>
-        <div class="qual-item">Compassionate &amp; dependable</div>
-        <div class="qual-item">Strong communication skills</div>
-        <div class="qual-item">CNA certification (for ADL-focused roles)</div>
-        <div class="qual-item">Willingness to learn and grow</div>
+        <div class="qual-item">Bilingual (English/Spanish)</div>
+        <div class="qual-item">Experience with dementia or Alzheimer's care</div>
       </div>
     </div>
   </div>
@@ -727,11 +971,13 @@
 <!-- ===== CTA / CONTACT ===== -->
 <section class="cta-section">
   <h2>Ready to Elevate Lives?</h2>
-  <p>Join the founding team at Comfort Keepers of Annapolis. Your career in caregiving starts here.</p>
-  <a href="mailto:info@annapolis.comfortkeepers.com?subject=Career%20Inquiry%20-%20I%20Want%20to%20Join%20the%20Team" class="cta-button"> Email Us to Apply</a>
+  <p>Join the founding team at Comfort Keepers of Annapolis. Your career in caregiving with paid training, premium pay, and real purpose starts here.</p>
+  <div>
+    <a href="mailto:info@annapolis.comfortkeepers.com?subject=Career%20Inquiry%20-%20I%20Want%20to%20Join%20the%20Team" class="cta-button"> Email Us to Apply</a>
+  </div>
   <div class="contact-info">
     <strong>Comfort Keepers of Annapolis</strong><br>
-    📍 8370 Veterans Hwy, Suite 202 · Millersville, MD 21108<br>
+    📍 8370 Veterans Hwy · Millersville, MD 21108<br>
     ✉️ <a href="mailto:info@annapolis.comfortkeepers.com">info@annapolis.comfortkeepers.com</a>
   </div>
 </section>
@@ -744,4 +990,3 @@
 
 </body>
 </html>
-
